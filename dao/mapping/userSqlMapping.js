@@ -1,6 +1,7 @@
+var key = 'Abc123_!' // 由它加密必须由它解密
+
 // CRUD SQL语句
-var key = 'Abc123_!'
-var user = {
+module.exports = {
 	insert:`INSERT INTO user (name,pwd) VALUES(?, ENCODE(?, '${key}'))`,
 	// update:'update user set name=?, pwd=? where id=?',
 	// delete: 'delete from user where id=?',
@@ -8,6 +9,3 @@ var user = {
   queryPwdByName: `select DECODE(pwd, '${key}') from user where name=?`,
 	queryAll: 'select * from user'
 };
-
-module.exports = user;
-
