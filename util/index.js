@@ -1,9 +1,12 @@
+/** 公共方法 */
+
 // 获得第一个参数值
-exports.getFristAttr = function (data) {
-  for (var key in data)
+exports.getFristAttr = (data) => {
+  for (let key in data)
       return data[key];
 }
 
+// 还没用上
 // 随机码，要求不高
 // randomFlag-是否任意长度 min-任意长度最小位[固定位数] max-任意长度最大位
 exports.randomWord = function (min, max, randomFlag=false) {
